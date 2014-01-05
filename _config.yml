@@ -1,4 +1,7 @@
 name: Jordan Wade
-markdown: redcarpet
+markdown: pandoc
+pandoc:
+  format: html5
+  extensions: [smart, mathjax]
 pygments: true
 exclude: [bower_components, bower.json, mkfile]
