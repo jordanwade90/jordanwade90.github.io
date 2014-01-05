@@ -1,4 +1,4 @@
 name: Jordan Wade
 markdown: redcarpet
 pygments: true
-exclude: [mkfile]
+exclude: [bower_components, bower.json, mkfile]

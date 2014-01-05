@@ -1,0 +1,14 @@
+{
+  "name": "jordanwade90.github.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jordanwade90/jordanwade90.github.io",
+  "authors": [
+    "Jordan Wade <jordan@jwade.net>"
+  ],
+  "dependencies": {
+    "bootstrap": "3.0.3"
+  },
+  "description": "Blog for Jordan Wade",
+  "license": "MIT",
+  "private": true
+}

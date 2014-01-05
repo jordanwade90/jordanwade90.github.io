@@ -1,13 +1,15 @@
 MKSHELL=$PLAN9/bin/rc
+CSS=recess --compile
+CSSFLAGS=--includePath bower_components/bootstrap/less
 
 deploy=`{pwd}/_deploy/
 repo=`{pwd}
 
-build:V:
+build:V: css/main.css
 	jekyll build
 
 clean:V:
-	rm -rf _site/ $deploy
+	rm -rf _site/ $deploy css/main.css
 
 draft:QV: _drafts/
 	tmp=`{mktemp -t draft}
@@ -89,3 +91,6 @@ publish:QV:
 
 _drafts/:
 	mkdir $target
+
+css/main.css: _less/main.less _less/variables.less _less/syntax.css
+	$CSS $CSSFLAGS $prereq >$target
