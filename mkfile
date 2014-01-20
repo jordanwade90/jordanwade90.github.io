@@ -22,7 +22,8 @@ draft:QV: _drafts/
 	eval $"EDITOR $tmp
 	lines=`{awk -F : 'BEGIN { i=0 }  i > 1 { print $0 } /---/ { i++ }' <$tmp | \
 		sed -e '/^[ 	]*$/d' | wc -l}
-	name=`{awk -F : 'BEGIN { i=0 } /---/ { i++ } $1 ~ /^title$/ { if(i==1) print $2 }' <$tmp | \
+	name=`{awk -F : 'BEGIN { i=0 } /---/ { i++ } $1 ~ /^title$/ { if(i==1) print $0 }' <$tmp | \
+		sed -e 's/^[ 	]*title:[ 	]*//' | \
 		tr A-Z a-z | tr -c a-z0-9- - | sed -e 's/^-*//' -e 's/-*$//' -e 's/--+/-/g'}
 	if(~ $name '' || ~ $name untitled*) {
 		i=`{ls _drafts | grep 'untitled[0-9-]*\.markdown' | wc -l}
