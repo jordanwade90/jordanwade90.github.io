@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Senior Design Survival Guide: Team Organization—Jordan Wade</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+  </head>
+  <body>
+    <header class="navbar navbar-inverse" role="banner">
+      <nav id="nav" class="container" role="navigation">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Jordan Wade</a>
+        </div>
+      </nav>
+    </header>
+    <div class="container" id="content">
+      <article>
+  <header class="page-header">
+    <h1>Senior Design Survival Guide: Team Organization</h1>
+    <p class="meta">Posted <time class="posted-at" datetime="2014-01-20T02:04:02Z" title="2014-01-20 02:04:02 +0000">2014.01.20</time>.</p>
+  </header>
+
+<p>This is the first article in a series of tips for students taking <a href="http://ecen4013.okstate.edu/">ECEN4013</a> Senior Design at <a href="http://okstate.edu/">Oklahoma State University</a>. This article focuses on how to organize senior design teams to ensure the team is somewhat functional and to evenly distribute the workload.</p>
+<p>Senior design teams are comprised of 5–7 people. As part of the team contract (a document describing the makeup of the team and details such as how grades are divided, money for part and PC board orders is obtained, and so on), each member of the team is assigned one or more roles; each role describes the work that member is expected to perform. Two roles—the “project manager” and the “lead engineer”—must be assigned by the team because those members are graded differently than the others; other roles are somewhat arbitrary and are up to the team. Because the roles are up to the team, roles are often assigned by reading through the list of suggested roles in the course text and semi-randomly assigning them to members, resulting in hardly anyone doing their theoretical job or some members becoming severely under- or overworked. Instead, a system is presented below for assigning roles that more evenly distributes the workload among the members.</p>
+<h2 id="assigning-roles-to-divide-work">Assigning roles to divide work</h2>
+<p>Before assigning roles, the project must be broken down into <em>modules</em>; each module is conceptually independent and has only a small, well-defined interface to other modules. Example modules include audio, infrared communication, lighting, radio, and user input. These modules, and the interfaces between them, will become your level 1 block diagram. Each module is associated with a <em>module role</em>; the person assigned a module role is completely responsible for the design and implementation of that module. Each member must have at least one module role, and preferably <em>only</em> one module role; each module role typically requires the same, large amount of work, so assigning multiple modules to someone will typically overwork them.</p>
+<p>ECEN4013 projects always include microcontrollers, due to the requirement to interface with the <a href="http://mage.okstate.edu/">MAGE system</a> (demanding communication over a <a href="https://en.wikipedia.org/wiki/CAN_bus">CAN bus</a>, a task too complex to be reasonably implemented in discrete logic). There are two module roles associated with microcontrollers: the <strong>interfacer</strong> is in charge of connecting the microcontroller to the outside world (as represented by the other modules) and the <strong>programmer</strong> is in charge of writing all of the code for the microcontroller. Both of these members are required to have a good understanding of the project as a whole; as such, one of them should be named lead engineer, who is required to have such an understanding.</p>
+<p>There are also roles unrelated to modules; three are listed below. Each member should be assigned at most one of these roles.</p>
+<p><strong>Editors</strong> manage the large volumes of documentation produced by projects. Diagrams, illustrations, manuals, notes, reports, and schematics are all created or reviewed by the editor to ensure consistency and is ultimately responsible for the quality each piece of documentation (including presentations and the final report); as a result, they must be good English writers and should have some skill with creating diagrams and graphics.</p>
+<p><strong>Lead engineers</strong> supervise the other members to avoid duplicating work and to find opportunities to simplify the project; for example, they might notice that two members require similar parts and suggest that they work to use the same ones, to simplify the bill of materials. To do their job, lead engineers must be familiar with every module of the project in some detail; since the interfacer and the programmer already require this to some extend, one of them should be named the lead engineer.</p>
+<p><strong>Project managers</strong> supervise the other members of the team to ensure that each is meeting their deadlines and that their modules fulfill their specifications; manage shared resources such as equipment, lockers, and money; place PC board and part orders; and take notes at team meetings—all of which they must attend—to be included in the final report. Consider assigning this role to a member that has a fairly straightforward module to avoid overworking them.</p>
+<h2 id="communication">Communication</h2>
+<p>Effective group communication is required for a team to be successful; if members cannot communicate, work is difficult to coordinate. A good group chat system, including history and search, suffices for teams due to their small size. Several companies provide such systems; <a href="https://campfirenow.com/">Campfire</a> is an excellent paid service provided by <a href="http://37signals.com/">37signals</a> which will cost a team about $50 for one semester<sup><a href="#fn1" class="footnoteRef" id="fnref1">1</a></sup>. For teams unwilling to spend money on tools, <a href="https://groupme.com/">GroupMe</a> is a fairly popular group messaging service used by some teams; unfortunately, the chat history is limited to “keep scrolling up” and cannot be searched, so any questions or other knowledge should be recorded elsewhere for easy reference.</p>
+<h2 id="file-storage">File storage</h2>
+<p>Projects produce many, many digital files, including documentation, PC board layouts, and schematic diagrams. Everyone must be able to access these files and see changes over time. Several companies provide online file storage and sharing; <a href="https://drive.google.com/">Google Drive</a> is particularly useful for teams because every OSU student already has a Google account<sup><a href="#fn2" class="footnoteRef" id="fnref2">2</a></sup> and because anything that <em>can</em> be made a Google Drive document—which allows collaborative editing and commenting—<em>should</em> be made a Google Drive document.</p>
+<p>Here is how to set up a shared Google Drive folder for the project:</p>
+<ol type="1">
+<li><p>Create the top-level folder, <code>ecen4013</code>. Get the Google accounts of every teammates and <a href="https://support.google.com/drive/answer/2494886">share</a> this folder with all of them, setting their permissions to “can edit”. Set the visibility of the folder to “everyone with the link can comment” so that advisors and TAs can comment on documents as needed.</p></li>
+<li><p>Create the directory hierarchy to organize the many, many files your team will produce. This hierarchy should be simple and use short, easy-to-remember names so that files don’t get misplaced. Here is a recommended hierarchy:</p>
+<ul>
+<li><p><code>Data</code> holds pictures, testing data (including logic analyzer, oscilloscope, and spectrum analyzer traces), and other information needed for reports.</p></li>
+<li><p><code>Documents</code> holds bills of material, presentations, and reports.</p></li>
+<li><p><code>Hardware</code> holds PC board layouts and schematic diagrams for the project.</p></li>
+<li><p><code>References</code> holds application notes, datasheets, how-to guides, manuals, and other documentation used by someone during their calculations or referenced in the report. These files often have unobvious names from their authors (datasheets from Texas Instruments, for example, are named for an internal document number, not their corresponding part); rename such files or have a document describing each file in this directory.</p></li>
+</ul></li>
+<li><p>Notify everyone that file sharing is set up and to check that it works.</p></li>
+</ol>
+<p><strong>Use native Google Drive documents when possible.</strong> Presentations, spreadsheets, and text documents should all be Google Drive documents, which allows editing by multiple people, detailed version histories, and comments. <em>Do not</em> use desktop software such as the Microsoft Office suite; such files cannot be edited by multiple people in parallel (which happens more frequently than you think) and have notorious problems with compatibility between different versions.</p>
+<p><strong>Don’t put version numbers in the filename.</strong> Any decent file sharing service keeps previous versions of each file; use this feature and never put version numbers, dated, “modified by”, and other such nonsense in the filename itself.</p>
+<h2 id="code-storage">Code storage</h2>
+<p>Source code should be kept under version control and stored in a repository hosting service, not in a regular file storage service like Google Drive. There exist many version control tools; I prefer <a href="http://git-scm.com/">Git</a>, a tool whose most famous users are the Linux kernel developers. <a href="http://github.com/">GitHub</a> is an excellent Git hosting service, providing not only code storage but also commenting, issue tracking, wikis, and good clients for Windows and Mac OS X for those who are allergic to command-line tools. Everyone on the team should be at least competent using the chosen version control tool, in case the designated programmer gets hit by a bus. For learning Git, <a href="http://try.github.com/">try.github.com</a> is an online, in-browser tutorial covering the basics.</p>
+<p>There exist several workflows for version controls tools. <a href="http://scottchacon.com/2011/08/31/github-flow.html">GitHub Flow</a> is a simple one developed for use by GitHub; if only one person ever writes code, however, no workflow may actually be required. At a minimum, the revisions demonstrated during prototyping, integration, and Design Day should be tagged for easy reference.</p>
+<p>At the end of the semester, all of the deliverables (including PC board layouts, schematic diagrams, and the final report) should be committed to the repository so that the entire project remains together.</p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>For comparison, teams can expect to spend at least several hundred dollars on part orders; one team in my capstone design class spent over $700.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Orange Mail accounts are Google accounts. Every OSU student has an Orange Mail account, even if their mail is forwarded to their Cowboy Mail account. Set up sharing to both this account and their personal Google account (if they have one) for maximum flexibility.<a href="#fnref2">↩</a></p></li>
+</ol>
+</section>
+
+</article>
+
+      <footer role="contentinfo"><p>© 2014 Jordan Wade. Powered by <a href="http://jekyllrb.com">Jekyll</a> and <a href="http://pages.github.com">GitHub Pages</a>. <a href="http://github.com/jordanwade90/jordanwade90.github.io">Source code</a>.</p></footer>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.0/moment.min.js"></script>
+    <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
