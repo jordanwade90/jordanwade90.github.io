@@ -88,7 +88,7 @@ publish:QV:
 	
 	Generated from commit $commit
 	.
-	git push master
+	git push -u origin master
 
 _drafts/:
 	mkdir $target
