@@ -1,4 +1,5 @@
 name: Jordan Wade
+gems: [jekyll-pandoc]
 markdown: pandoc
 pandoc:
   format: html5
