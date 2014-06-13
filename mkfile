@@ -75,11 +75,11 @@ publish:QV:
 	}
 	commit=`{git rev-parse source}
 	date=`{u date -u '+%Y-%m-%d %H:%M:%SZ'}
-	tmp=`{mktemp -t prep}
+	tmp=`{mktemp -dt prep.XXXXXXXXXX}
 	jekyll build --destination $tmp
 	rm -rf $deploy
 	git clone -b master -n $repo $deploy
-	cp -R $tmp/ $deploy
+	cp -R $tmp/* $deploy
 	rm -rf $tmp
 	cd $deploy
 	git add -A .
